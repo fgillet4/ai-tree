@@ -1,0 +1,68 @@
+# Default .treeignore file for ai-tree
+# Lines starting with # are comments
+
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+yarn.lock
+yarn-error.log
+
+# Build output
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+
+# Common directories to ignore
+.git/
+.github/
+.vscode/
+.idea/
+.DS_Store
+coverage/
+tmp/
+temp/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+logs/
+*.log
+
+# Common large file types
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.jar
+*.war
+*.ear
+*.iso
+*.dmg
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Common binary formats
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.ico
+*.pdf
+*.mp3
+*.mp4
+*.mov
+*.avi
+*.7z
+
+# Add your custom ignore patterns below

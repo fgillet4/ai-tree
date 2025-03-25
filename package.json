@@ -1,0 +1,32 @@
+{
+    "name": "ai-tree",
+    "version": "0.1.0",
+    "description": "A tool for generating tree diagrams of software architecture with ignore file support",
+    "main": "bin/index.js",
+    "bin": {
+      "ai-tree": "./bin/index.js"
+    },
+    "scripts": {
+      "start": "node bin/index.js",
+      "test": "jest"
+    },
+    "keywords": [
+      "ai",
+      "tree",
+      "diagram",
+      "architecture",
+      "visualization",
+      "software"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+      "chalk": "^4.1.2",
+      "commander": "^9.4.0",
+      "ignore": "^5.2.0",
+      "glob": "^8.0.3"
+    },
+    "devDependencies": {
+      "jest": "^29.0.0"
+    }
+  }
