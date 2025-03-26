@@ -34,6 +34,9 @@ ai-tree --ignore .my-treeignore
 # Output the tree diagram to a file
 ai-tree --output project-structure.md --format markdown
 
+# Automatically create a markdown file in the current directory
+ai-tree --markdown
+
 # Create a default .treeignore file
 ai-tree --create-ignore
 
@@ -93,6 +96,7 @@ ai-tree --format markdown --output structure.md
 | `--no-summary` | | Skip generating summary | |
 | `--only-dirs` | | Show only directories | |
 | `--pattern` | | Include only files matching pattern | |
+| `--markdown` | `-m` | Create a markdown file in the current directory | |
 
 ## Use with AI Tools
 

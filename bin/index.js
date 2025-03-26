@@ -20,6 +20,7 @@ program
   .option('-i, --ignore <path>', 'Path to .treeignore file', '.treeignore')
   .option('-o, --output <path>', 'Output file path')
   .option('-f, --format <type>', 'Output format (console, markdown, json)', 'console')
+  .option('-m, --markdown', 'Create a markdown file (project-tree.md) in the current directory')
   .option('--create-ignore', 'Create a default .treeignore file in the current directory')
   .option('--no-summary', 'Skip generating summary at the end')
   .option('--only-dirs', 'Show only directories, not files')
@@ -90,11 +91,21 @@ async function run() {
       break;
   }
   
+  // Output to specified file if provided
   if (options.output) {
     fs.writeFileSync(options.output, formattedOutput);
     console.log(`Output written to ${options.output}`);
   } else {
     console.log(formattedOutput);
+  }
+  
+  // Additionally create markdown file if requested
+  if (options.markdown) {
+    const mdFormatter = require('../src/formatters/markdownFormatter');
+    const mdOutput = mdFormatter.format(tree, { ...options, summary: true });
+    const mdOutputPath = path.join(process.cwd(), 'project-tree.md');
+    fs.writeFileSync(mdOutputPath, mdOutput);
+    console.log(`\nMarkdown tree created at ${mdOutputPath}`);
   }
   
   if (options.summary) {
